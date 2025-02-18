@@ -11,8 +11,9 @@ namespace WpfApp.Services
     {
         private readonly List<User> _users = new()
         {
-            new User { Id = 1, UserName = "nikhilpj98" , Password =" password1" },
-            new User { Id = 2, UserName = "mig21" , Password ="supersonic" }
+            new User { Id = 1, UserName = "nikhilpj98" , Password ="password1" },
+            new User { Id = 2, UserName = "mig21" , Password ="supersonic" },
+             new User { Id = 3, UserName = "user" , Password ="123" }
         };
 
         public User Authenticate(string username, string password)

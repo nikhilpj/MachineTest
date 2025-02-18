@@ -22,3 +22,6 @@ C:\Users\Lenovo\Desktop\Nikhil\Test\WpfAppTest\WpfApp\obj\Debug\net8.0-windows\V
 C:\Users\Lenovo\Desktop\Nikhil\Test\WpfAppTest\WpfApp\obj\Debug\net8.0-windows\Views\Login.baml
 C:\Users\Lenovo\Desktop\Nikhil\Test\WpfAppTest\WpfApp\obj\Debug\net8.0-windows\Views\AddTicket.g.cs
 C:\Users\Lenovo\Desktop\Nikhil\Test\WpfAppTest\WpfApp\obj\Debug\net8.0-windows\Views\AddTicket.baml
+C:\Users\Lenovo\Desktop\Nikhil\Test\WpfAppTest\WpfApp\obj\Debug\net8.0-windows\WpfApp.sourcelink.json
+C:\Users\Lenovo\Desktop\Nikhil\Test\WpfAppTest\WpfApp\obj\Debug\net8.0-windows\Views\EditTicket.g.cs
+C:\Users\Lenovo\Desktop\Nikhil\Test\WpfAppTest\WpfApp\obj\Debug\net8.0-windows\Views\EditTicket.baml

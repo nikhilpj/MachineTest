@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -16,14 +16,22 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Add Ticket" HorizontalAlignment="Right" Grid.Column="1"/>
-        <ListView Grid.Row="1" Grid.ColumnSpan="2">
+        <Button Content="Add Ticket" Click="AddTicket_click" HorizontalAlignment="Right" Grid.Column="1"/>
+        <ListView ItemsSource="{Binding Tickets}" Grid.Row="1" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Id"/>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
 
-                    <GridViewColumn Header="Title"/>
-                    <GridViewColumn Header="status"/>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}"/>
+                   <GridViewColumn Header="status" DisplayMemberBinding="{Binding Status}"/>
+                    <GridViewColumn Header="Edit">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit" Click="EditTicket_Click" Tag="{Binding}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
 
                 </GridView>
             </ListView.View>

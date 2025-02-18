@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp.ViewModels;
 
 namespace WpfApp.Views
 {
@@ -19,9 +20,10 @@ namespace WpfApp.Views
     /// </summary>
     public partial class AddTicket : Window
     {
-        public AddTicket()
+        public AddTicket(int userId)
         {
             InitializeComponent();
+            DataContext = new AddTicketViewModel(userId);
         }
     }
 }

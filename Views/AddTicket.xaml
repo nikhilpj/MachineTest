@@ -6,7 +6,14 @@
         xmlns:local="clr-namespace:WpfApp.Views"
         mc:Ignorable="d"
         Title="AddTicket" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="Title" />
+            <TextBox Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Details"/>
+            <TextBox Text="{Binding Description}"/>
+            <Button Content="Submit" Command="{Binding SubmitCommand}" Margin="10"/>
+        </StackPanel>
         
     </Grid>
 </Window>
