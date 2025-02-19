@@ -23,7 +23,7 @@
 
         <TextBlock Text="Status:" FontWeight="Bold" Grid.Row="4"/>
         <StackPanel Grid.Row="5" Orientation="Vertical" Margin="0 30 0 50" Width="100" HorizontalAlignment="Left">
-            <CheckBox Content="open" IsChecked="{Binding IsOpen,Mode=TwoWay}"/>
+            <CheckBox Content="open" IsChecked="{Binding IsOpen,Mode=TwoWay}" IsEnabled="{Binding IsOpenEnabled}"/>
             <CheckBox Content="In Progress" IsChecked="{Binding IsInProgress,Mode=TwoWay}"/>
             <CheckBox Content="Closed" IsChecked="{Binding IsClosed,Mode=TwoWay}"/>
             

@@ -68,6 +68,15 @@ namespace WpfApp.ViewModels
                 OnPropertyChanged(nameof(IsInProgress));
                 OnPropertyChanged(nameof(IsOpen));
                 OnPropertyChanged(nameof(IsClosed));
+                OnPropertyChanged(nameof(IsOpenEnabled));
+            }
+        }
+
+        public bool IsOpenEnabled
+        {
+            get
+            {
+                return Ticket.Status != "In Progress"; // Disable if "In Progress" is selected
             }
         }
 
