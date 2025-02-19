@@ -94,11 +94,19 @@ namespace WpfApp.ViewModels
         {
             _ticketService = new TicketService();
             Ticket = ticket;
+            
             SaveCommand = new RelayCommand(SaveTicket, CanSaveTicket);
+            if (IsClosed)
+            {
+                MainWindow mainWindow = new MainWindow(Ticket.UserId);
+                mainWindow.Show();
+            }
         }
 
         private bool CanSaveTicket(object obj)
         {
+            
+            
             return true;
         }
 

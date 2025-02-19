@@ -11,7 +11,7 @@
             <TextBlock Text="Title" />
             <TextBox Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Text="Details"/>
-            <TextBox Text="{Binding Description}"/>
+            <TextBox Text="{Binding Description,UpdateSourceTrigger=PropertyChanged}"/>
             <Button Content="Submit" Command="{Binding SubmitCommand}" Margin="10"/>
         </StackPanel>
         

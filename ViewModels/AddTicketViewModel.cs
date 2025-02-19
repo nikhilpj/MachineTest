@@ -35,6 +35,7 @@ namespace WpfApp.ViewModels
             {
                 _title = value;
                 OnPropertyChanged(nameof(Title));
+                ((RelayCommand)SubmitCommand).RaiseCanExecuteChanged();
             }
         }
 
@@ -48,6 +49,7 @@ namespace WpfApp.ViewModels
             {
                 _description = value;
                 OnPropertyChanged(nameof(Description));
+                ((RelayCommand)SubmitCommand).RaiseCanExecuteChanged();
             }
         }
 
@@ -73,7 +75,8 @@ namespace WpfApp.ViewModels
 
         private bool CanSubmitTicket(object obj)
         {
-            return true;
+            return !string.IsNullOrWhiteSpace(Title) && !string.IsNullOrWhiteSpace(Description);
+           
         }
 
         private async void SubmitTicket(object obj)

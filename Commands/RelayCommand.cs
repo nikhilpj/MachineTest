@@ -27,5 +27,10 @@ namespace WpfApp.Commands
         {
              _Excute(parameter);
         }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

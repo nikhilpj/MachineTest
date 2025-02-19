@@ -29,7 +29,7 @@
                     <GridViewColumn Header="Edit">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Edit" Click="EditTicket_Click" Tag="{Binding}" />
+                                <Button Content="Edit" Click="EditTicket_Click" Tag="{Binding}" IsEnabled="{Binding isEditable}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
