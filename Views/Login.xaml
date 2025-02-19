@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:WpfApp.Views"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
-    <Grid>
-        <StackPanel Margin="20">
-            <TextBlock Text="UserName"/>
-            <TextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"/>
+    <Grid Margin="20">
+        <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="180" Width="150">
+            <TextBlock Text="UserName" Margin="0 0 0 10"/>
+            <TextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"  Margin="0 0 0 10"/>
 
-            <TextBlock Text="Password"/>
+            <TextBlock Text="Password"  Margin="0 0 0 10"/>
 
-            <PasswordBox x:Name="passwordBox" PasswordChanged="PasswordBox_PasswordChanged"/>
+            <PasswordBox x:Name="passwordBox" PasswordChanged="PasswordBox_PasswordChanged"  Margin="0 0 0 10"/>
             <Button Command="{Binding  LoginCommand}" Content="Submit"/>
             <TextBlock Text="{Binding StatusMessage}" Foreground="Red"/>
         </StackPanel> 

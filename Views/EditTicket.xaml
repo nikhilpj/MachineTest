@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp.Views"
         mc:Ignorable="d"
         Title="EditTicket" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -29,6 +29,7 @@
             
             
         </StackPanel>
-        <Button Content="Save" Grid.Row="6" Command="{Binding SaveCommand}" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <Button Content="Save" Grid.Row="6" Command="{Binding SaveCommand}" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
     </Grid>
 </Window>

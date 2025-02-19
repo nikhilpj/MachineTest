@@ -42,7 +42,7 @@ namespace WpfApp.ViewModels
         }
 
 
-        private async void LoadTickets()
+        public async Task LoadTickets()
         {
             var tickets = await _ticketService.GetUserTickets(_userId);
             Tickets = new ObservableCollection<Ticket>(tickets);

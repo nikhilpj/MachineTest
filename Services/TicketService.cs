@@ -18,6 +18,16 @@ namespace WpfApp.Services
             return await httpClient.GetFromJsonAsync<List<Ticket>>($"{userId}");
         }
 
+        public async Task<User> LoginUser(User user)
+        {
+            var response = await httpClient.PostAsJsonAsync("user", user);
+            if(response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadFromJsonAsync<User>();
+            }
+            return null;
+        }
+
         public async Task<bool> CreateTicket(Ticket ticket)
         {
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("",ticket);
@@ -29,6 +39,8 @@ namespace WpfApp.Services
             var response = await httpClient.PutAsJsonAsync($"{ticketId}/status", newStatus);
             response.EnsureSuccessStatusCode(); // Throws exception if not successful
         }
+
+        
 
 
 

@@ -21,10 +21,15 @@ namespace WpfApp.Views
     /// </summary>
     public partial class EditTicket : Window
     {
+        
         public EditTicket(Ticket ticket)
         {
             InitializeComponent();
+
             DataContext = new EditTicketViewModel(ticket);
+
         }
+
+       
     }
 }

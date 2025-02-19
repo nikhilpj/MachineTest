@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using WpfApp.Commands;
+using WpfApp.Models;
 using WpfApp.Services;
 
 namespace WpfApp.ViewModels
@@ -17,7 +18,8 @@ namespace WpfApp.ViewModels
         private string _password;
         private string _statusMessage;
         public event PropertyChangedEventHandler? PropertyChanged;
-        private readonly AuthService _authService;
+      
+        private readonly TicketService _ticketService;
         public ICommand LoginCommand { get; set; }
 
         public string UserName
@@ -58,7 +60,8 @@ namespace WpfApp.ViewModels
 
         public LoginViewModel()
         {
-            _authService = new AuthService();
+            _ticketService = new TicketService();
+           
             LoginCommand = new RelayCommand(LoginUser, CanLoginUser);
            
         }
@@ -68,16 +71,22 @@ namespace WpfApp.ViewModels
             return true;
         }
 
-        private void LoginUser(object obj)
+        private async void LoginUser(object obj)
         {
-            MessageBox.Show("login user ufncrtion");
-            var user = _authService.Authenticate(UserName, Password);
 
-            if (user != null)
+            //var user = _authService.Authenticate(UserName, Password);
+            var user = new User
+            {
+                UserName = UserName,
+                Password = Password
+            };
+            var exUser =await _ticketService.LoginUser(user);
+
+            if (exUser != null)
             {
                 MessageBox.Show("login sucess");
                 StatusMessage = "Login Successfull";
-                MainWindow mainWindow = new MainWindow(user.Id);
+                MainWindow mainWindow = new MainWindow(exUser.Id);
                 mainWindow.Show();
             }
             else

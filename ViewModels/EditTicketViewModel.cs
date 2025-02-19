@@ -4,16 +4,19 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using WpfApp.Commands;
 using WpfApp.Models;
 using WpfApp.Services;
+using WpfApp.Views;
 
 namespace WpfApp.ViewModels
 {
     public class EditTicketViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
+       
 
         private readonly TicketService _ticketService;
         private Ticket _ticket;
@@ -102,6 +105,15 @@ namespace WpfApp.ViewModels
         private async void SaveTicket(object obj)
         {
             await _ticketService.UpdateTicketStatus(Ticket.Id, Ticket.Status);
+
+            if(obj is Window EditTicket)
+            {
+                EditTicket.Close();
+            }
+            MainWindow mainWindow = new MainWindow(Ticket.UserId);
+            mainWindow.Show();
+
+           
         }
 
         protected void OnPropertyChanged(string propertyName) =>

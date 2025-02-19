@@ -91,12 +91,18 @@ namespace WpfApp.ViewModels
             {
                 StatusMessage = "Ticket added successfully";
                 MessageBox.Show(StatusMessage);
-                Application.Current.Windows[2].Close();
+
+                Application.Current.Windows[1].Close();
+                MainWindow mainWindow = new MainWindow(_userId);
+                mainWindow.Show();
             }
             else
             {
                 StatusMessage = "error in adding Ticket";
                 MessageBox.Show(StatusMessage);
+                MainWindow mainWindow = new MainWindow(_userId);
+                mainWindow.Show();
+
             }
 
 

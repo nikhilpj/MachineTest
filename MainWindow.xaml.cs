@@ -35,16 +35,22 @@ namespace WpfApp
         private void AddTicket_click(object sender, RoutedEventArgs e)
         {
             AddTicket addTicket = new AddTicket(_userId);
+            this.Close();
             addTicket.Show();
 
         }
 
-        private void EditTicket_Click(object sender, RoutedEventArgs e)
+        private   void EditTicket_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button && button.Tag is Ticket ticket)
             {
                 EditTicket editTicket = new EditTicket(ticket);
+
+                this.Close();
                 editTicket.Show();
+
+               
+
             }
         }
     }
